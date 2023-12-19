@@ -16,12 +16,12 @@ def limit_bandwidth(interface, upload_limit, download_limit):
 
 def main():
     parser = argparse.ArgumentParser(description='محدود کردن پهنای باند دانلود و آپلود کاربران TCP')
-    parser.add_argument('-i', '--interface', required=True, help='نام رابط شبکه (مثلاً eth0)')
-    parser.add_argument('-u', '--upload', required=True, help='پهنای باند آپلود مورد نظر (مثلاً 1Mbit)')
-    parser.add_argument('-d', '--download', required=True, help='پهنای باند دانلود مورد نظر (مثلاً 2Mbit)')
-    args = parser.parse_args()
 
-    limit_bandwidth(args.interface, args.upload, args.download)
+    interface = input("لطفاً نام رابط شبکه را وارد کنید (مثلاً eth0): ")
+    upload_limit = input("لطفاً پهنای باند آپلود مورد نظر را وارد کنید (مثلاً 1Mbit): ")
+    download_limit = input("لطفاً پهنای باند دانلود مورد نظر را وارد کنید (مثلاً 2Mbit): ")
+
+    limit_bandwidth(interface, upload_limit, download_limit)
 
 
 if __name__ == '__main__':
